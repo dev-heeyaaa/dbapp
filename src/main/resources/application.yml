@@ -1,0 +1,24 @@
+server:
+  port:  8086
+  servlet:
+    encoding:
+      charset: UTF-8
+      
+      
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  
+      
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: korea
+    password: korea1234
+    url: jdbc:mysql://localhost:3306/koreadb
+    
+  jpa:
+    hibernate:
+      ddl-auto: none # create, upate, none 서비스 배포하면 무조건 none 쓰기
+    show-sql: true

@@ -26,7 +26,7 @@ public class Post {
 	@ManyToOne 
 	@JoinColumn(name = "user_id")    // 이름 변경
 	private User user; // ORM 사용  . 컬럼을 못 만듦 
-	// ex) 1에 대한 오브젝트가 들어온다 - ORM
+	// ex) 1에 대한 오브젝트가 들어온다 - ORM 
 	
 	public User getUser() {
 		return user;

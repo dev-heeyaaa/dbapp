@@ -35,7 +35,7 @@ INSERT INTO post(title, content, user_id) VALUES('제목5','내용5',1);
 	</dependency>
 ```
 
-###JSTL 태그 라이브러리
+### JSTL 태그 라이브러리
 ```jsp
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 ```

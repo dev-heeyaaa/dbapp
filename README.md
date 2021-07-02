@@ -10,6 +10,14 @@ GRANT ALL PRIVILEGES ON *.* TO 'korea'@'%';
 
 create database koreadb;
 ```
+### 더미 데이터
+```sql
+
+INSERT INTO user(username, PASSWORD, email, address) VALUES('love', '1234', 'love@nate.com', '서울');
+INSERT INTO post(title, content, user_id) VALUES('제목3','내용3',3);
+INSERT INTO post(title, content, user_id) VALUES('제목4','내용4',1);
+INSERT INTO post(title, content, user_id) VALUES('제목5','내용5',1);
+```
 
 ### 추가 의존성
 ```xml

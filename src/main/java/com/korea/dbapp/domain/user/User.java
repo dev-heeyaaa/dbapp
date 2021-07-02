@@ -5,6 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.korea.dbapp.domain.post.Post;
+
+import java.util.List;
 
 @Entity
 public class User {
@@ -19,6 +25,19 @@ public class User {
 	private String email;
 	private String address;
 	
+	// user가 1 post가 many
+	// user에서 FK 안 만들어 줌
+	// 양방향 매핑
+	@JsonIgnoreProperties({"user"}) // json으로 계속 파싱하면서 때린다. user만 json으로 파싱하지 마라
+	@OneToMany(mappedBy = "user") // FK 만들지 마라고 하는 것.
+	private List<Post> posts; // 이 안에 post를 넣을 때 user를 건드리지 말라. 
+	
+	public List<Post> getPosts() {
+		return posts;
+	}
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
+	}
 	public int getId() {
 		return id;
 	}

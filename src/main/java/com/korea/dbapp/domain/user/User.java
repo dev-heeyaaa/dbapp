@@ -2,6 +2,7 @@ package com.korea.dbapp.domain.user;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,6 +33,12 @@ public class User {
 	@OneToMany(mappedBy = "user") // FK 만들지 마라고 하는 것.
 	private List<Post> posts; // 이 안에 post를 넣을 때 user를 건드리지 말라. 
 	
+	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email
+				+ ", address=" + address + "]";
+	}
 	public List<Post> getPosts() {
 		return posts;
 	}

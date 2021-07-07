@@ -10,7 +10,8 @@
 			<label for="password">Password:</label> <input type="password" class="form-control" placeholder="Enter password" name="password" required="required"/>
 		</div>
 
-		<button type="submit" class="btn btn-primary">Login</button>
+		<button type="submit" class="btn btn-outline-primary">Sign In</button>
 	</form>
+	<br/>
 </div>
 <%@ include file="../layout/footer.jsp"%>

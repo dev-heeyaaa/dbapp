@@ -1,6 +1,7 @@
 package com.korea.dbapp.domain.post;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,13 +24,20 @@ public class Post {
 	// post가 many . user가 one
 	// user 오브젝트의 primary key가 foreign key -> 모순 해결
 	// @ManyToOne 연관 관계 설정
-	@ManyToOne 
+	@ManyToOne
 	@JoinColumn(name = "user_id")    // 이름 변경
 	private User user; // ORM 사용  . 컬럼을 못 만듦 
 	// ex) 1에 대한 오브젝트가 들어온다 - ORM 
 	
+	
+	
 	public User getUser() {
 		return user;
+	}
+
+	@Override
+	public String toString() {
+		return "Post [id=" + id + ", title=" + title + ", content=" + content + ", user=" + user + "]";
 	}
 
 	public void setUser(User user) {

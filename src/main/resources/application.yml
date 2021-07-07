@@ -22,3 +22,4 @@ spring:
     hibernate:
       ddl-auto: none # create, upate, none 서비스 배포하면 무조건 none 쓰기
     show-sql: true
+    open-in-view: true

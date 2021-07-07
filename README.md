@@ -67,3 +67,8 @@ spring:
       ddl-auto: none # create, upate, none 서비스 배포하면 무조건 none 쓰기
     show-sql: true
 ```
+
+### 주소API
+```url
+https://www.juso.go.kr/addrlink/addrLinkUrl.do?confmKey=devU01TX0FVVEgyMDIxMDcwNTE3MjgyMzExMTM2MTE=&returnUrl=http://localhost:8086/juso
+```

@@ -43,8 +43,12 @@ public class UserAPIControllerTest {
 	
 	// http://localhost:8084/user/2
 	@GetMapping("/test/user/{id}") // id는 디폴트라서
-	public User findById(@PathVariable int id) {
-		return userRepository.findById(id).get();
+	public String findById(@PathVariable int id) {
+		User userEntity = userRepository.findById(id).get();
+		userEntity.getPosts().get(0).getTitle();
+		//System.out.println(userEntity);
+		return "ok";
+		
 		// 실시간에 터지는 null 오류
 		// box로 wrapping 되어있는
 	}

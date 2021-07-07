@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.korea.dbapp.domain.post.Post;
@@ -26,7 +27,10 @@ public class PostAPIControllerTest {
 	}
 	
 	@GetMapping("/test/post/{id}")
-	public Post findById(@PathVariable int id) {
-		return postRepository.findById(id).get();
+	public String findById(@PathVariable int id) {
+		Post postEntity = postRepository.findById(id).get();
+		postEntity.getId();
+		return "ok";
 	}
+
 }

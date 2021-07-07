@@ -5,16 +5,16 @@
 <!-- 	username=뭐시기&password=뭐시기&email=뭐시기&address=뭐시기 -> x-www-from... 데이터타입  MIME타입 -->
 <!-- post 방식으로 요청 (body에...) -->
 <!-- form action="/auth/join" 컨트롤러에 만들어 놓은 주소 넣기 / 같은 서버라서 http랑 포트번호 (풀 주소)안 적어도 됨-->
-	<form action="/auth/join" method="post">
+	<form action="/user/${principal.id}" method="post"> <!-- 원래는 put 사용해야 함 -->
 
 		<div class="form-group">
-			<label for="username">User Name:</label> <input type="text" class="form-control" placeholder="Enter username" name="username"/>
+			<label for="username">User Name:</label> <input value="${principal.username}" type="text" class="form-control" placeholder="Enter username" readonly="readonly"/>
 		</div>
 		<div class="form-group">
-			<label for="password">Password:</label> <input type="password" class="form-control" placeholder="Enter password" name="password"/>
+			<label for="password">Password:</label> <input value="${principal.password}" type="password" class="form-control" placeholder="Enter password" name="password" required="required"/>
 		</div>
 		<div class="form-group">
-			<label for="email">Email:</label> <input type="email" class="form-control" placeholder="Enter email" name="email"/>
+			<label for="email">Email:</label> <input value="${principal.email}" type="email" class="form-control" placeholder="Enter email" readonly="readonly"/>
 		</div>
 		
 		<div class="form-group">			
@@ -22,11 +22,11 @@
 			<div id="list"></div>
 			<div id="callBackDiv">
 				<label for="address">Address:</label>
-					<input type="text"  class="form-control" placeholder="Enter Address" name="address" id="address" readonly="readonly"/>
+					<input value="${principal.address}" type="text"  class="form-control" placeholder="Enter Address" name="address" id="address" readonly="readonly"/>
 			</div>
 		</div>
 				
-		<button type="submit" class="btn btn-outline-primary" id="btn-joinForm">Sign Up</button>
+		<button type="submit" class="btn btn-outline-primary" id="btn-joinForm">Update</button>
 	</form>
 	<br/>
 </div>

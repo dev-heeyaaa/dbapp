@@ -42,7 +42,7 @@ function goPopup(){
 function jusoCallBack(roadFullAddr){
 	let addressEL = document.querySelector("#address");
 	addressEL.value = roadFullAddr;
-	console.log(addressEL);
+	//console.log(addressEL);
 }
 
 </script>

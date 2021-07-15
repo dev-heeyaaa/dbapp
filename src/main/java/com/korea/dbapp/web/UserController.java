@@ -20,7 +20,6 @@ public class UserController {
 	
 	// 의존성 주입(DI)
 	public UserController(UserRepository userRepository, HttpSession session) {
-		super();
 		this.userRepository = userRepository;
 		this.session = session;
 	}
@@ -35,10 +34,6 @@ public class UserController {
 		return "auth/joinForm";
 	}
 	
-	@GetMapping("/auth/loginForm")
-	public String loginForm(User user) {
-		return "auth/loginForm";
-	}
 	
 	@PostMapping("/auth/join") 
 	public String join(User user) { 
@@ -46,6 +41,11 @@ public class UserController {
 		return "redirect:/auth/loginForm";
 	}
 	// redirect를 쓴다는 건 controller에 다시 때린다는 것  -> 데이터 때문에 
+	
+	@GetMapping("/auth/loginForm")
+	public String loginForm(User user) {
+		return "auth/loginForm";
+	}
 	
 	// 얘만 RestController (data를 리턴)
 	@PostMapping("/auth/login")
